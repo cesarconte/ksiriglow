@@ -1,0 +1,22 @@
+[Desktop Entry]
+Name=Siri Screen Glow
+Name[es]=Halo Luminoso de Siri
+GenericName=Apple Intelligence Screen Glow
+GenericName[es]=Efecto Luminoso de Pantalla Apple Intelligence
+Comment=Efecto perimetral luminoso iridiscente para Kiri en KDE Plasma 6 Wayland
+Comment[es]=Efecto perimetral luminoso iridiscente para Kiri en KDE Plasma 6 Wayland
+Exec=ksiriglow
+Icon=kity-symbolic
+Type=Application
+Categories=Qt;KDE;Utility;
+StartupNotify=false
+Terminal=false
+Actions=TestListening;TestThinking;
+
+[Desktop Action TestListening]
+Name=Probar halo de escucha
+Exec=ksiriglow --test listening
+
+[Desktop Action TestThinking]
+Name=Probar halo de procesamiento
+Exec=ksiriglow --test thinking

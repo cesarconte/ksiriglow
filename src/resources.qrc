@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/org/cesar/ksiriglow">
+        <file>qml/Main.qml</file>
+    </qresource>
+</RCC>
