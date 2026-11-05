@@ -22,12 +22,7 @@ Window {
     readonly property real audioAmp: Controller ? Controller.audioLevel : 0.0
     readonly property string glowState: Controller ? Controller.state : "idle"
 
-    visible: true
-    opacity: isGlowActive ? 1.0 : 0.0
-
-    Behavior on opacity {
-        NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
-    }
+    visible: isGlowActive || fadeAnim.running
 
     // Traveling wave phase for Apple Intelligence thinking state
     property real wavePhase: 0.0
@@ -44,7 +39,17 @@ Window {
     readonly property real glowSpread: 16 + 28 * audioAmp
 
     Item {
+        id: contentContainer
         anchors.fill: parent
+        opacity: glowRoot.isGlowActive ? 1.0 : 0.0
+
+        Behavior on opacity {
+            NumberAnimation {
+                id: fadeAnim
+                duration: 250
+                easing.type: Easing.InOutQuad
+            }
+        }
 
         // Outer Glow Perimeter Frame (Layer 1: Deep atmospheric ambient halo)
         Rectangle {
