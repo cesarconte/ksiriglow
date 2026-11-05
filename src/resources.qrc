@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/org/cesar/ksiriglow">
         <file>qml/Main.qml</file>
+        <file>shaders/glow.frag.qsb</file>
     </qresource>
 </RCC>
